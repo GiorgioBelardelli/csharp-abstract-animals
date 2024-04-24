@@ -6,6 +6,20 @@ using System.Threading.Tasks;
 
 namespace csharp_abstract_animals
 {
+
+        //INTERFACCIA PER ESERCIZIO 2
+        public interface IVolante
+        {
+            public void Vola();
+        }
+
+        public interface INuotante
+        {
+            public void Nuota();
+        }
+        
+
+        //ESERCIZIO 1
         public abstract class Animale
         {
             public abstract void Mangia();
@@ -27,7 +41,7 @@ namespace csharp_abstract_animals
                 Console.WriteLine("Woof! Woof!");
             }
         }
-        public class Passerotto : Animale
+        public class Passerotto : Animale, IVolante
         {
             public override void Mangia()
             {
@@ -37,19 +51,27 @@ namespace csharp_abstract_animals
             {
                 Console.WriteLine("Chip! Chip!");
             }
+            public void Vola() 
+            {
+                Console.WriteLine("Sto volando!!!");
+            }
         }
-        public class Aquila : Animale
+        public class Aquila : Animale, IVolante
         {
             public override void Mangia()
             {
                 Console.WriteLine("Carnivoro");
-            }
+        }
             public override void FaiVerso()
             {
                 Console.WriteLine("Screech! Screech!");
             }
+            public void Vola()
+            {
+                Console.WriteLine("Sto volando!!!");
+            }
         }
-        public class Delfino : Animale
+        public class Delfino : Animale, INuotante
         {
             public override void Mangia()
             {
@@ -58,6 +80,10 @@ namespace csharp_abstract_animals
             public override void FaiVerso()
             {
                 Console.WriteLine("eEeEeEeEeE!!");
+            }
+            public void Nuota()
+            {
+                Console.WriteLine("Sto nuotando!!!");
             }
         }
 
